@@ -1,16 +1,16 @@
 
-namespace VRControl
+namespace Gosund_Plug_Remote_Switch
 {
-    public partial class Form1 : Form
+    public partial class ControlForm : Form
     {
         private GosundPlug? plug = null;
-        public Form1()
+        public ControlForm()
         {
             InitializeComponent();
             this.CenterToScreen();
             this.Icon = Properties.Resources.Icon1;
         }
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void ControlForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -56,5 +56,9 @@ namespace VRControl
             }
         }
 
+        private void ControlForm_Deactivate(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }

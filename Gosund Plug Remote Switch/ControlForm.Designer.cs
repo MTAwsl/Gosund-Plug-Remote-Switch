@@ -1,6 +1,6 @@
-﻿namespace VRControl
+﻿namespace Gosund_Plug_Remote_Switch
 {
-    partial class Form1
+    partial class ControlForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -109,7 +109,7 @@
             this.refTimer.Interval = 1000;
             this.refTimer.Tick += new System.EventHandler(this.refTimer_Tick);
             // 
-            // Form1
+            // ControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,9 +121,13 @@
             this.Controls.Add(this.ipTextBox);
             this.Controls.Add(this.offBtn);
             this.Controls.Add(this.onBtn);
-            this.Name = "Form1";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ControlForm";
+            this.ShowInTaskbar = false;
             this.Text = "Control";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Deactivate += new System.EventHandler(this.ControlForm_Deactivate);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ControlForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,7 +139,7 @@
         private Button offBtn;
         private TextBox ipTextBox;
         private Label label_status;
-        private Label label1;
+        private Label label1; 
         private TextBox tokenTextBox;
         private Label label2;
         private System.Windows.Forms.Timer refTimer;
